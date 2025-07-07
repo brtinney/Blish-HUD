@@ -129,24 +129,26 @@ namespace Blish_HUD {
                 return;
             }
 
-            if (GameService.GameIntegration.Audio.AudioDevice == null) {
-                // No device is set yet or there isn't one to use
-                return;
-            }
+            return;
 
-            try {
-                const string SOUND_EFFECT_FILE_EXTENSION = ".wav";
-                var          filePath                    = soundName + SOUND_EFFECT_FILE_EXTENSION;
+            // if (GameService.GameIntegration.Audio.AudioDevice == null) {
+            //     // No device is set yet or there isn't one to use
+            //     return;
+            // }
 
-                if (_audioDataReader.FileExists(filePath)) {
-                    SoundEffect.FromStream(_audioDataReader.GetFileStream(filePath)).Play(GameService.GameIntegration.Audio.Volume, 0, 0);
-                }
+            // try {
+            //     const string SOUND_EFFECT_FILE_EXTENSION = ".wav";
+            //     var          filePath                    = soundName + SOUND_EFFECT_FILE_EXTENSION;
 
-                _playRemainingAttempts = 3;
-            } catch (Exception ex) {
-                _playRemainingAttempts--;
-                Logger.Warn(ex, "Failed to play sound effect.");
-            }
+            //     if (_audioDataReader.FileExists(filePath)) {
+            //         SoundEffect.FromStream(_audioDataReader.GetFileStream(filePath)).Play(GameService.GameIntegration.Audio.Volume, 0, 0);
+            //     }
+
+            //     _playRemainingAttempts = 3;
+            // } catch (Exception ex) {
+            //     _playRemainingAttempts--;
+            //     Logger.Warn(ex, "Failed to play sound effect.");
+            // }
         }
 
         private static string RefPath => ApplicationSettings.Instance.RefPath ?? REF_FILE;

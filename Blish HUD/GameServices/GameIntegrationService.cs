@@ -34,7 +34,7 @@ namespace Blish_HUD {
         /// <summary>
         /// Contains information about the attached Guild War 2's volume level based on the users selected audio settings.
         /// </summary>
-        public AudioIntegration Audio { get; private set; }
+        // public AudioIntegration Audio { get; private set; }
 
         /// <summary>
         /// Contains information about any running TacO processes.
@@ -105,7 +105,7 @@ namespace Blish_HUD {
             SetServiceModules(this.Gw2Instance = new Gw2InstanceIntegration(this),
                               this.GfxSettings = new GfxSettingsIntegration(this),
                               this.ClientType  = new ClientTypeIntegration(this),
-                              this.Audio       = new AudioIntegration(this),
+                            //   this.Audio       = new AudioIntegration(this),
                               this.TacO        = new TacOIntegration(this),
                               this.WinForms    = new WinFormsIntegration(this));
         }
