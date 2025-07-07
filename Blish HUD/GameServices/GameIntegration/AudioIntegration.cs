@@ -183,7 +183,8 @@ namespace Blish_HUD.GameIntegration {
         }
 
         private void InitializeProcessMeterInformations() {
-            if (!_service.Gw2Instance.Gw2IsRunning) return;
+            // Fix for broken wine audio integration
+            if (!_service.Gw2Instance.Gw2IsRunning || true) return;
 
             _gw2AudioDevices.Clear();
             foreach (var device in _deviceEnumerator.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active)) {
